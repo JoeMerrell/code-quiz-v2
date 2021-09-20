@@ -1,4 +1,4 @@
-// QUESTION OBJECTS
+// 10 total questions
 var questions = [
     {
     title: "What does HTML mean?",
@@ -69,36 +69,7 @@ var questions = [
       "A popular manual for JavaScript programmers",
       "No clue"
     ]
-  },
-  {
-    question: "Apart from integers, another form of numerical data:",
-    answer: "Floating point",
-    options: [
-      "Inversion",
-      "Cavalcade",
-      "Floating point",
-      "Fractionated"
-    ]
-  },
-  {
-    question: "Which of these is NOT a programming language?",
-    answer: "Apple",
-    options: [
-      "Ruby",
-      "Java",
-      "Python",
-      "Apple"
-    ]
-  },
-  {
-    question: "Which of these CSS frameworks was a Twitter initiative?",
-    answer: "Bootstrap",
-    options: [
-      "Materialize",
-      "Bootstrap",
-      "Semantic UI",
-      "Bulma"
-    ]
-  },
+  }
+  
   
 ];

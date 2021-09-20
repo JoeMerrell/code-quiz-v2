@@ -45,7 +45,7 @@ function startQuiz() {
     if (time <= 0) {
       quizEnd();
     }
-  }
+  };
 
   function getQuestion() {
     // get current question object 
@@ -73,12 +73,12 @@ function startQuiz() {
       // display choices
       choicesEl.appendChild(choiceNode);
     });
-  }
+  };
 
-// click answer -- generates new question or ends quiz if final question, deducts 15 seconds for wrong answer
+// generates new question or ends quiz if final question, deducts 15 seconds for wrong answer
 
   function questionClick() {
-    // check if incorrect choice
+    // check if incorrect answer
     if (this.value !== questions[currentQuestionIndex].answer) {
       // penalize time
       time -= 15;
@@ -87,7 +87,7 @@ function startQuiz() {
         time = 0;
       }
   
-      // display revised time on page
+      // display time on page
       timeEl.textContent = time;
   
       feedbackEl.textContent = "Incorrect!";
@@ -95,7 +95,7 @@ function startQuiz() {
       feedbackEl.textContent = "Correct!";
     }
   
-    // flash correct/incorrect feedback
+    // correct/incorrect feedback
     feedbackEl.setAttribute("class", "feedback");
     setTimeout(function() {
       feedbackEl.setAttribute("class", "feedback hide");
@@ -114,7 +114,7 @@ function startQuiz() {
       getQuestion();
       console.log("getQuestion section");
     }
-  }
+  };
 
 
 // end the quiz function
@@ -133,14 +133,14 @@ function startQuiz() {
   
     // hide questions section
     quizScreen.setAttribute("class", "hide");
-  }
+  };
 
 // function for saving high score
 function saveHighscore() {
     // get value of input box
     var initials = initialsEl.value.trim();
   
-    // make sure value wasn't empty
+    // make sure value isn't empty
     if (initials !== "") {
       // get saved scores from localstorage, or if not any, set to empty array
       var highscores =
@@ -156,16 +156,16 @@ function saveHighscore() {
       highscores.push(newScore);
       localStorage.setItem(highscores, JSON.stringify(highscores));
   
-      // redirect to next page
+      // redirect to hi-score.html 
       location.href = "hi-score.html";
     }
-  }
+  };
 
   function checkForEnter(event) {
     if (event.key === "Enter") {
       saveHighscore();
     }
-  }
+  };
   
   // user submits initials
   submitBtn.onclick = saveHighscore;
