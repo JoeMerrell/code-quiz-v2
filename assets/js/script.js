@@ -18,7 +18,7 @@ var questionsEl = document.querySelector("#question");
 var choicesEl = document.querySelector("#choices");
 
 
-// Start the game
+// Start game
 function startQuiz() {
     // hide start
     titleScreen.setAttribute("class", "hide");
@@ -35,7 +35,7 @@ function startQuiz() {
     getQuestion();
   }
 
-  // second countdown
+  // seconds countdown
   function tick() {
     // update time
     time--;
@@ -48,36 +48,37 @@ function startQuiz() {
   }
 
   function getQuestion() {
-    // get current question object from array
+    // get current question object 
     var currentQuestion = questions[currentQuestionIndex];
   
-    // update title with current question
+    // update title (question)
     var titleEl = document.getElementById("question-title");
     titleEl.textContent = currentQuestion.title;
   
-    // clear out any old question choices
+    // clear old choices
     choicesEl.innerHTML = "";
   
-    // loop over choices
+    // loop choices
     currentQuestion.choices.forEach(function(choice, i) {
-      // create new button for each choice
+      // create button for each choice
       var choiceNode = document.createElement("button");
       choiceNode.setAttribute("class", "choice");
       choiceNode.setAttribute("value", choice);
   
       choiceNode.textContent = i + 1 + ". " + choice;
   
-      // attach click event listener to each choice
+      // attach click event listener to choices
       choiceNode.onclick = questionClick;
   
-      // display on the page
+      // display choices
       choicesEl.appendChild(choiceNode);
     });
   }
 
-// click on question answer either generate new question or end quiz if final question, and deduct time for answering wrong
+// click answer -- generates new question or ends quiz if final question, deducts 15 seconds for wrong answer
+
   function questionClick() {
-    // check if user guessed wrong
+    // check if incorrect choice
     if (this.value !== questions[currentQuestionIndex].answer) {
       // penalize time
       time -= 15;
@@ -86,17 +87,15 @@ function startQuiz() {
         time = 0;
       }
   
-      // display new time on page
+      // display revised time on page
       timeEl.textContent = time;
-  
   
       feedbackEl.textContent = "Incorrect!";
     } else {
-
       feedbackEl.textContent = "Correct!";
     }
   
-    // flash right/wrong feedback on page for half a second
+    // flash correct/incorrect feedback
     feedbackEl.setAttribute("class", "feedback");
     setTimeout(function() {
       feedbackEl.setAttribute("class", "feedback hide");
@@ -105,11 +104,15 @@ function startQuiz() {
     // move to next question
     currentQuestionIndex++;
   
+    console.log(currentQuestionIndex);
+    console.log(questions.length);
     // check if we've run out of questions
-    if (currentQuestionIndex === questions.length) {
+    if (currentQuestionIndex === 7) {
       quizEnd();
+      
     } else {
       getQuestion();
+      console.log("getQuestion section");
     }
   }
 
@@ -118,6 +121,7 @@ function startQuiz() {
   function quizEnd() {
     // stop timer
     clearInterval(timerId);
+    console.log("quiz end section");
   
     // show end screen
     var highscoreSectionEl = document.querySelector("#highscore-section");
@@ -131,7 +135,7 @@ function startQuiz() {
     quizScreen.setAttribute("class", "hide");
   }
 
-// function for saving highscore
+// function for saving high score
 function saveHighscore() {
     // get value of input box
     var initials = initialsEl.value.trim();
@@ -140,7 +144,7 @@ function saveHighscore() {
     if (initials !== "") {
       // get saved scores from localstorage, or if not any, set to empty array
       var highscores =
-        JSON.parse(window.localStorage.getItem(highscores)) || [];
+        JSON.parse(localStorage.getItem(highscores)) || [];
   
       // format new score object for current user
       var newScore = {
@@ -150,27 +154,25 @@ function saveHighscore() {
   
       // save to localstorage
       highscores.push(newScore);
-      window.localStorage.setItem(highscores, JSON.stringify(highscores));
+      localStorage.setItem(highscores, JSON.stringify(highscores));
   
       // redirect to next page
-      window.location.href = "highScore.html";
+      location.href = "hi-score.html";
     }
   }
 
   function checkForEnter(event) {
-    // "13" represents the enter key
     if (event.key === "Enter") {
       saveHighscore();
     }
   }
   
-  // user clicks button to submit initials
+  // user submits initials
   submitBtn.onclick = saveHighscore;
   
-  // user clicks button to start quiz
+  // user starts quiz
   startBtn.onclick = startQuiz;
   
-  initialsEl.onkeyup = checkForEnter;
 
 
 
