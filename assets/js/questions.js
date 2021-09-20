@@ -1,7 +1,6 @@
 // QUESTION OBJECTS
 var questions = [
     {
-    
     title: "What does HTML mean?",
     answer: "Hypertext Markup Language",
     choices: [
@@ -10,10 +9,8 @@ var questions = [
       "Hypertext Markup Language",
       "Historic Timed Mistaken Lexicon"
     ]
-
   },
     {
-    
     title: "What is an API?",
     answer: "Application Programming Interface",
     choices: [
@@ -22,10 +19,8 @@ var questions = [
       "Application Program Interrogation",
       "Average Programmatical Interest"
     ]
-
   },
   {
-    
     title: "What is CSS?",
     answer: "Cascading Style Sheet",
     choices: [
@@ -34,10 +29,8 @@ var questions = [
       "Computational Sync Status",
       "Cascades of Sheet Style"
     ]
-
   },
     {
-    
     title: "Arrays in JavaScript can store:",
     answer: "All of the above",
     choices: [
@@ -46,10 +39,8 @@ var questions = [
       "Booleans",
       "All of the above"
     ]
-
   },
     {
-    
     title: "What is a function that prints a message to log on the debugging console?",
     answer: "console.log()",
     choices: [
@@ -59,9 +50,7 @@ var questions = [
       "=> && i++"
     ]
   },
-  
   {
-    
     title: "Commonly used data types DO NOT include:",
     answer: "Alerts",
     choices: [
@@ -71,9 +60,7 @@ var questions = [
       "Strings"
     ]
   },
-  
   {
-    
     title: "What is jQuery?",
     answer: "A widely-used JavaScript library",
     choices: [
@@ -83,9 +70,7 @@ var questions = [
       "No clue"
     ]
   },
-  
   {
-    
     question: "Apart from integers, another form of numerical data:",
     answer: "Floating point",
     options: [
@@ -95,9 +80,7 @@ var questions = [
       "Fractionated"
     ]
   },
-  
   {
-    
     question: "Which of these is NOT a programming language?",
     answer: "Apple",
     options: [
@@ -107,9 +90,7 @@ var questions = [
       "Apple"
     ]
   },
-
   {
-    
     question: "Which of these CSS frameworks was a Twitter initiative?",
     answer: "Bootstrap",
     options: [

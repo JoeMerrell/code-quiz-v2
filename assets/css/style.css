@@ -2,11 +2,16 @@
     font-family: 'Koh Santepheap', cursive;
 }
 
+.link-1 {
+
+    text-decoration: none;
+}
+
 section{
     background-color: white;
-   
     padding: 10px;
 }
+
 .hide {
     display: none;
 }
@@ -14,6 +19,7 @@ section{
 .show {
     display: block;
 }
+
 h1{
     text-align: center;
 }
