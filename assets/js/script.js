@@ -1,9 +1,9 @@
-// variables to keep track of quiz state
+// Quiz variables
 var currentQuestionIndex = 0;
 var time = questions.length * 10;
 var timerId;
 
-// variables to reference DOM elements....................................
+// DOM variables
 var timeEl = document.querySelector("#time");
 var startBtn = document.querySelector("#startButton");
 var submitBtn = document.querySelector("#submit-button");
@@ -18,12 +18,12 @@ var questionsEl = document.querySelector("#question");
 var choicesEl = document.querySelector("#choices");
 
 
-//create a function to start the game
+// Start the game
 function startQuiz() {
-    // hide start screen
+    // hide start
     titleScreen.setAttribute("class", "hide");
   
-    // un-hide questions section
+    // show questions
     quizScreen.setAttribute("class", "show");
   
     // start timer
@@ -35,13 +35,13 @@ function startQuiz() {
     getQuestion();
   }
 
-  //create a second taken off of a clock
+  // second countdown
   function tick() {
     // update time
     time--;
     timeEl.textContent = time;
   
-    // check if user ran out of time
+    // if time ends
     if (time <= 0) {
       quizEnd();
     }
@@ -90,7 +90,7 @@ function startQuiz() {
       timeEl.textContent = time;
   
   
-      feedbackEl.textContent = "Wrong!";
+      feedbackEl.textContent = "Incorrect!";
     } else {
 
       feedbackEl.textContent = "Correct!";
@@ -140,7 +140,7 @@ function saveHighscore() {
     if (initials !== "") {
       // get saved scores from localstorage, or if not any, set to empty array
       var highscores =
-        JSON.parse(window.localStorage.getItem("highscores")) || [];
+        JSON.parse(window.localStorage.getItem(highscores)) || [];
   
       // format new score object for current user
       var newScore = {
@@ -150,7 +150,7 @@ function saveHighscore() {
   
       // save to localstorage
       highscores.push(newScore);
-      window.localStorage.setItem("highscores", JSON.stringify(highscores));
+      window.localStorage.setItem(highscores, JSON.stringify(highscores));
   
       // redirect to next page
       window.location.href = "highScore.html";
