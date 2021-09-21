@@ -9,7 +9,9 @@
 
 ## Description
 
-From the UCLA Coding Bootcamp challenge description: "To help you become familiar with these tests and give you a chance to apply the skills from this module, this week’s Challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write." My version of this app leads the user through 7 questions (the number can vary depending on how many questions are added to the questions.js file) and, if successfully answered within the given time limit, will present the user with a score. Next steps for the app will involve keeping track of high scores.
+From the UCLA Coding Bootcamp challenge description: "To help you become familiar with these tests and give you a chance to apply the skills from this module, this week’s Challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write." 
+
+My version of this app leads the user through 7 questions (the number can vary depending on how many questions are added to the questions.js file) and, if successfully answered within the given time limit, will present the user with a score. Next steps for the app will involve keeping track of high scores. Link to the deployed app: https://joemerrell.github.io/code-quiz-v2/
 
 
 ## Contents 
@@ -29,7 +31,7 @@ From the UCLA Coding Bootcamp challenge description: "To help you become familia
 ## Installation
 
 
-The repo can be downloaded and the app run locally, though the app is live at this link: https://joemerrell.github.io/code-quiz-v2/
+The repo can be downloaded at https://github.com/JoeMerrell/code-quiz-v2/tree/main and then the app can be run locally. The app is also live at this link: https://joemerrell.github.io/code-quiz-v2/
 
 
 ## Usage
