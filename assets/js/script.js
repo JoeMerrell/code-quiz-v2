@@ -1,6 +1,6 @@
 // Quiz variables
 var currentQuestionIndex = 0;
-var time = questions.length * 10;
+var time = questions.length * 10; // 10 seconds per question
 var timerId;
 
 // DOM variables
@@ -48,7 +48,7 @@ function startQuiz() {
   };
 
   function getQuestion() {
-    // get current question object 
+    // get current question
     var currentQuestion = questions[currentQuestionIndex];
   
     // update title (question)
@@ -135,6 +135,9 @@ function startQuiz() {
     quizScreen.setAttribute("class", "hide");
   };
 
+
+// --------------------- FIX
+
 // function for saving high score
 function saveHighscore() {
     // get value of input box
@@ -167,10 +170,10 @@ function saveHighscore() {
     }
   };
   
-  // user submits initials
+  // submit initials
   submitBtn.onclick = saveHighscore;
   
-  // user starts quiz
+  // start quiz
   startBtn.onclick = startQuiz;
   
 
